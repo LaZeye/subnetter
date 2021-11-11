@@ -17,7 +17,7 @@ while(True):
     except ValueError:
         print('*' * 20)
         print('*' * 20)
-        print("Please enter a classful addresss space.")
+        print("Please enter a valid classful ipv4.")
         print('*' * 20)
         print('*' * 20)
 
