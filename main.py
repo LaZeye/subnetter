@@ -1,10 +1,27 @@
 import ipaddress
 
-network = '192.168.1.0'
-mask = '/24'
-subnet = ipaddress.ip_network((network + mask))
-address_list = []
+while(True):
+    print('*' * 20)
+    print("Please enter the network address:")
+    print("An example would be 10.0.0.0")
+    network = input("-----> ")
 
+    print('*' * 20)
+
+    print("Please enter the network address:")
+    print("An example would be 27")
+    mask = input("Prefix Bits: ")
+    try:
+        subnet = ipaddress.ip_network((network +"/"+ mask))
+        break
+    except ValueError:
+        print('*' * 20)
+        print('*' * 20)
+        print("Please enter a classful addresss space.")
+        print('*' * 20)
+        print('*' * 20)
+
+address_list = []
 for x in subnet.hosts():
     address_list.append(x)
 
